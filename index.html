@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Base CSS Demo</title>
+  <link rel="stylesheet" href="default.css" />
+  <style>
+    /* Page-specific demo adjustments */
+    body {
+      padding: var(--space-5);
+    }
+    section {
+      margin-bottom: var(--space-6);
+    }
+    h2 {
+      margin-bottom: var(--space-3);
+      border-bottom: 1px solid var(--color-border);
+      padding-bottom: 0.25rem;
+    }
+    .swatch {
+      width: 80px;
+      height: 80px;
+      border-radius: 0.5rem;
+      border: 1px solid var(--color-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      background: var(--color-bg-alt);
+      color: var(--color-text-muted);
+    }
+    .demo-box {
+      background: var(--color-surface);
+      border-radius: 0.5rem;
+      padding: var(--space-3);
+    }
+  </style>
+</head>
+<body>
+  <header class="container text-center mb-2">
+    <h1>Base CSS Visual Test</h1>
+    <p>This page demonstrates all base styles and utilities.</p>
+  </header>
+
+  <main class="container">
+    <!-- Typography -->
+    <section>
+      <h2>Typography & Responsive Headings</h2>
+      <p>
+        This paragraph uses base font size and line height. Here is
+        <strong>bold</strong>, <em>italic</em>, and
+        <a href="#">a link</a>.
+      </p>
+      <h1>Heading 1 (clamp)</h1>
+      <h2>Heading 2 (clamp)</h2>
+      <h3>Heading 3 (clamp)</h3>
+      <h4>Heading 4</h4>
+      <p class="text-muted">Muted text example using <code>.text-muted</code>.</p>
+      <pre><code>preformatted code block</code></pre>
+    </section>
+
+    <!-- Spacing Utilities -->
+    <section>
+      <h2>Spacing & Utility Classes</h2>
+      <div class="demo-box mt-2 mb-2 p-2 rounded shadow">
+        <p class="mb-2">This box uses <code>.mt-2</code>, <code>.mb-2</code>, <code>.p-2</code>, <code>.rounded</code>, and <code>.shadow</code>.</p>
+        <button>Example Button</button>
+      </div>
+    </section>
+
+    <!-- Buttons -->
+    <section>
+      <h2>Buttons</h2>
+      <div class="flex">
+        <button>Primary</button>
+        <button style="background: var(--color-success);">Success</button>
+        <button style="background: var(--color-warning);">Warning</button>
+        <button style="background: var(--color-error);">Error</button>
+      </div>
+    </section>
+
+    <!-- Form Elements -->
+    <section>
+      <h2>Form Elements</h2>
+      <form class="grid" style="max-width: 400px;">
+        <label>
+          Text Input
+          <input type="text" placeholder="Type something..." />
+        </label>
+        <label>
+          Select
+          <select>
+            <option>Option One</option>
+            <option>Option Two</option>
+            <option>Option Three</option>
+          </select>
+        </label>
+        <label>
+          Textarea
+          <textarea rows="3" placeholder="Your message..."></textarea>
+        </label>
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+
+    <!-- Layout Helpers -->
+    <section>
+      <h2>Layout Helpers</h2>
+
+      <h3>Container</h3>
+      <div class="container demo-box">
+        <p>This is a <code>.container</code> (max width 1200px, centered).</p>
+      </div>
+
+      <h3>Flex Layout</h3>
+      <div class="flex mt-2">
+        <div class="demo-box">Item 1</div>
+        <div class="demo-box">Item 2</div>
+        <div class="demo-box">Item 3</div>
+      </div>
+
+      <h3>Grid Layout</h3>
+      <div class="grid mt-2" style="grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));">
+        <div class="demo-box">Grid 1</div>
+        <div class="demo-box">Grid 2</div>
+        <div class="demo-box">Grid 3</div>
+      </div>
+    </section>
+
+    <!-- Colors -->
+    <section>
+      <h2>Color Palette</h2>
+      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));">
+        <div class="swatch" style="background: var(--color-bg); color: var(--color-text);">bg</div>
+        <div class="swatch" style="background: var(--color-bg-alt);">bg-alt</div>
+        <div class="swatch" style="background: var(--color-surface);">surface</div>
+        <div class="swatch" style="background: var(--color-accent); color:#fff;">accent</div>
+        <div class="swatch" style="background: var(--color-success); color:#fff;">success</div>
+        <div class="swatch" style="background: var(--color-warning);">warning</div>
+        <div class="swatch" style="background: var(--color-error); color:#fff;">error</div>
+        <div class="swatch" style="background: var(--color-border);">border</div>
+      </div>
+    </section>
+
+    <!-- Accessibility -->
+    <section>
+      <h2>Accessibility Features</h2>
+      <p>
+        Try tabbing to this
+        <a href="#">link</a> or a form field to see the
+        <code>:focus-visible</code> outline.
+      </p>
+      <p>
+        This stylesheet respects
+        <code>prefers-reduced-motion</code>, disabling animations and transitions for users who prefer less motion.
+      </p>
+    </section>
+
+    <!-- Scrollbar Demo -->
+    <section>
+      <h2>Custom Scrollbar</h2>
+      <div style="max-height: 100px; overflow-y: scroll; border: 1px solid var(--color-border); padding: var(--space-2); border-radius: 0.5rem;">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ut justo ut erat faucibus placerat. Nullam sodales, nisl non porttitor aliquam, felis lectus finibus est, eu tempus odio turpis ut nunc. Cras suscipit erat in quam vulputate suscipit. Donec lacinia congue nisi, nec lacinia nunc vehicula et. Curabitur dictum vel augue nec finibus. Sed dictum viverra turpis, sit amet maximus est cursus et.
+        </p>
+      </div>
+    </section>
+
+    <!-- Theme Toggle -->
+    <section>
+      <h2>Theme Toggle</h2>
+      <button id="themeToggle">Toggle Dark / Light</button>
+    </section>
+  </main>
+
+  <footer class="text-center mt-2 text-muted">
+    <p>Base CSS & Demo by Amok — Clean, scalable, and accessible foundation.</p>
+  </footer>
+
+  <script>
+    const btn = document.getElementById('themeToggle');
+    btn.addEventListener('click', () => {
+      const root = document.documentElement;
+      const isDark = root.getAttribute('data-theme') === 'dark';
+      root.setAttribute('data-theme', isDark ? 'light' : 'dark');
+    });
+  </script>
+</body>
+</html>
